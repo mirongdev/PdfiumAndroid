@@ -58,7 +58,7 @@ dependencies {
 // Maven Publishing
 ext {
     PUBLISH_GROUP_ID = 'com.github.mirongdev'
-    PUBLISH_VERSION = "0.2"
+    PUBLISH_VERSION = "0.3"
     PUBLISH_ARTIFACT_ID = 'pdfium-android'
 }
 
