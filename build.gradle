@@ -12,14 +12,24 @@ buildscript {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 35
 
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 31
+        targetSdkVersion 35
         versionCode 1
         versionName "1.9.2"
         buildConfigField 'String', 'VERSION_NAME', "\"${defaultConfig.versionName}\""
+
+          externalNativeBuild {
+      // For ndk-build, instead use the ndkBuild block.
+      cmake {
+        // Passes optional arguments to CMake.
+        arguments "-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON"
+      }
+    }
+
+        
     }
     buildTypes {
         release {
@@ -47,8 +57,8 @@ dependencies {
 
 // Maven Publishing
 ext {
-    PUBLISH_GROUP_ID = 'com.github.mhiew'
-    PUBLISH_VERSION = "1.9.2"
+    PUBLISH_GROUP_ID = 'com.github.mirongdev'
+    PUBLISH_VERSION = "0.2"
     PUBLISH_ARTIFACT_ID = 'pdfium-android'
 }
 
