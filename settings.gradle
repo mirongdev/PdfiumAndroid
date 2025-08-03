@@ -1,0 +1,2 @@
+include ':pdfium-android'
+include ':app'
